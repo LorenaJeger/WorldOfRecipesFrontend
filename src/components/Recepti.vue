@@ -28,19 +28,21 @@ export default {
     created() {
         this.fetchRecepti();
     },
-    name: 'Recepti',
+    name: 'recepti',
     methods: {
-        async fetchRecepti(term) {
-            term = term || store.searchTerm;
-            this.cards = await Recepti.getAll(term);
+        async fetchRecepti() {
+           // term = term || store.searchTerm;
+            this.cards = await Recepti.getAll();
             
         },
         gotoDetails(card) {
-            this.$router.push({ path: `recepti/${card.id}` });
+            console.log("push")
+            this.$router.push({ path:`recepti/${card.id}` });
         }
     },
     components: {
         ReceptCard
+
     }
 };
 </script>

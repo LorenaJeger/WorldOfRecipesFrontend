@@ -2,7 +2,7 @@
      <div class="container">
         <Pocetna />
         <Recepti />
-        <Recepti />
+        
 
        
        <button type="button" class="btn btn-light">
@@ -17,12 +17,14 @@
 <script>
 import Pocetna from '@/components/Pocetna.vue';
 import Recepti from '@/components/Recepti.vue';
+
 export default {
   
   name: 'home',
   components: {
     Pocetna,
-    Recepti
+    Recepti,
+
   }
 }
 </script>

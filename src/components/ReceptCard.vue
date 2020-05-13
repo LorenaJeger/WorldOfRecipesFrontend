@@ -10,7 +10,7 @@
         <div class="card-footer text-left">
           <div>{{ timeAgo }}</div>
 
-           <div v-if="showcomments">
+          <!--  <div v-if="showcomments">
             <div class="comments list-group">
               <a :key="c.id" v-for="c in comments" href="#" class="animate list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
@@ -29,7 +29,7 @@
               <button type="submit" class="btn btn-primary ml-2">Post</button>
             </form>
           </div> 
-
+ -->
         </div>
       </div>
 
@@ -44,8 +44,8 @@ export default {
   data () {
     return {
       global: store,
-       newComment: "",
-      comments: []
+      // newComment: "",
+      //comments: []
     }
   },
   methods: {
@@ -53,22 +53,19 @@ export default {
       return moment(t.posted_at).fromNow()
     }, 
     
-    /* async refresh() {   //da se komentari prilikom dodavanja prikažu automatski 
+    async refresh() {   //da se komentari prilikom dodavanja prikažu automatski 
       let post = await Recepti.getOne(this.info.id);
-      this.get_comments();
-    }, */
-
-
-    async postComment() {
+     // this.get_comments();
+    }, 
+  },
+    /* async postComment() {
       if (this.newComment) {
         let postId = this.info.id;    //this.info je trenutni Fipugram post
-
         let comment = {     //sadržaj komentara
           email: this.global.userEmail,
           comment: this.newComment,
           receptId: this.receptId
         };
-
         //try, catch, finally --> dobra praksa kod pozivanja udaljenih metoda na backendu
         try {
           await Recepti.Comments.add(receptId, comment);  //pozivamo gore definiranu metodu
@@ -90,17 +87,16 @@ export default {
     
       this.comments = await Recepti.Comments.get(this.info.id);
     
-    },
+    }, */
   
   computed: {
     timeAgo () {
       return moment(this.info.posted_at).fromNow()
     }
-  },
- /*  mounted(){
+  }
+  /* mounted(){
     this.get_comments();
-  } */
-
+  }  */
 }
 </script>
 

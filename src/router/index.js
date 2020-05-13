@@ -34,6 +34,12 @@ Vue.use(VueRouter)
     path: '/dodajrecept',
     name: 'dodajrecept',
     component: () => import(/* webpackChunkName: "dodajrecept" */ '../views/DodajRecept.vue')
+  },
+  {
+    path: 'recept/:id',
+    props: true,
+    name: 'recept-detail',
+    component: () => import(/* webpackChunkName: "recept-detail" */ '../views/ReceptDetail.vue')
   }
  
 ]
