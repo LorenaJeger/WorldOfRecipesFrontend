@@ -1,14 +1,8 @@
+  
 <template>
-     <div class="container">
+    <div class="container">
         <Pocetna />
         <Recepti />
-        <Recepti />
-
-       
-       <button type="button" class="btn btn-light">
-            <router-link to="/dodajrecept"> Dodaj novi recept</router-link>
-          </button>
-          
     </div>
     
   
@@ -16,9 +10,8 @@
 
 <script>
 import Pocetna from '@/components/Pocetna.vue';
-import Recepti from '@/components/Recepti.vue';
+import Recepti from '@/views/Recepti.vue';
 export default {
-  
   name: 'home',
   components: {
     Pocetna,

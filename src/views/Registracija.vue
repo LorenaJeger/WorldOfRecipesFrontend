@@ -1,40 +1,38 @@
 <template>
     <div class="register">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <div class="in-left">
-                         <div class="card border-info mb-3">
-                            <h1 class="card-header text-info text-center mb-5">Registracija </h1>
-                            <div class="card-body">
-                                <form @submit.prevent="register">
-                                    <div v-if="errorMessage" class="alert alert-danger">
-                                        <strong>Ups!</strong>
-                                        {{ errorMessage }}
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="emailField">Korisničko ime:</label>
-                                        <input v-model="username" type="text" class="form-control" id="nameField" placeholder="Upišite korisničko ime" required>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="confirmPasswordField">E-mail:</label>
-                                        <input v-model="email" type="email" class="form-control" id="emailField" placeholder="Upisite email" required>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="passwordField">Lozinka:</label>
-                                        <input v-model="password" type="password" class="form-control" id="passwordField" placeholder="Upišite lozinku" required>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="confirmPasswordField">Potvrda lozinke:</label>
-                                        <input v-model="passwordConfirmation" type="password" class="form-control" id="confirmPasswordField" placeholder="Potvrdite lozinku" required>
-                                    </div>
-                                    <div v-if="password != passwordConfirmation" class="alert alert-danger" role="alert">Lozinke nisu jednake.</div>
-                                    <div class="text-center">
-                                        <button v-if="password === passwordConfirmation" type="submit" class="button">Registriraj se</button>
-                                    </div>
-                                </form>
-                            </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="in-left">
+                    <div class="card border-info mb-3">
+                        <h1 class="card-header text-info text-center mb-5">Registracija </h1>
+                        <div class="card-body">
+                            <form @submit.prevent="register">
+                                <div v-if="errorMessage" class="alert alert-danger">
+                                    <strong>Ups!</strong>
+                                    {{ errorMessage }}
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="emailField">Korisničko ime:</label>
+                                    <input v-model="username" type="text" class="form-control" id="nameField" placeholder="Upišite korisničko ime" required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="confirmPasswordField">E-mail:</label>
+                                    <input v-model="email" type="email" class="form-control" id="emailField" placeholder="Upisite email" required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="passwordField">Lozinka:</label>
+                                    <input v-model="password" type="password" class="form-control" id="passwordField" placeholder="Upišite lozinku" required>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="confirmPasswordField">Potvrda lozinke:</label>
+                                    <input v-model="passwordConfirmation" type="password" class="form-control" id="confirmPasswordField" placeholder="Potvrdite lozinku" required>
+                                </div>
+                                <div v-if="password != passwordConfirmation" class="alert alert-danger" role="alert">Lozinke nisu jednake.</div>
+                                <div class="text-center">
+                                    <button v-if="password === passwordConfirmation" type="submit" class="button">Registriraj se</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -65,7 +63,7 @@ export default {
           // ovdje ide kod nakon POVRATKA UPITA za ragistraciju i to ako nije prošlo
           let id = this.email;
           // sada moramo spremiti te dodatne podatke
-          // Add a new document in collection "cities"
+          // Add a new document in collection "Korisnici"
           db.collection("Korisnici")
             .doc(id)
             .set({
@@ -158,5 +156,8 @@ export default {
     -moz-animation-delay: 0.3s;
     -o-animation-duration: 0.3s;
     animation-delay: 0.3s;
+}
+.register{
+    padding-top: 50px;
 }
 </style>

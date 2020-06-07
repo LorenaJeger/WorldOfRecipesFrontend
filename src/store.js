@@ -1,5 +1,5 @@
 export default {
     authenticated: false,
-    userEmail: 'fake@email.com',
-   cards: [],
+    userEmail: null,
+    searchTerm: '',
 }

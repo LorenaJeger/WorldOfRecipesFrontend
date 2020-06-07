@@ -112,4 +112,7 @@ export default {
 .button:hover {
   background-color: rgb(30, 122, 165);
 }
+.login{
+  padding-top: 50px;
+}
 </style>

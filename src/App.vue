@@ -6,14 +6,19 @@
           <div class="col">
             <div class="navbar fixed-top">
               <router-link class="active" to="/">Početna</router-link>
-             
+              <div v-if="authenticated" class="navbar-center">
+
+                <form class="form-inline my-2 my-lg-0 mr-auto ml-5">
+                  <input v-model="searchTerm" class="form-control mr-sm-2" type="search" placeholder="Trazi nesto" aria-label="Search">
+                </form>
+                
+              </div>
               <div class="navbar-right">
                 <router-link v-if="authenticated" class="nav-link" to="/dodajrecept">Dodaj recept</router-link>
                 <router-link v-if="authenticated" class="nav-link" to="/mojprofil">Moj profil</router-link>
                 <router-link v-if="authenticated" class="nav-link" to="/postavke">Postavke</router-link>
                 <a v-if="authenticated" @click="logout" class="nav-link" href="#">Odjava</a>
               </div>
-          
             </div>
           </div>
         </div>
@@ -66,7 +71,7 @@ created () {
           this.$router.push({name: 'pocetna'}).catch(err => console.log(err))
       }
     });
-     this.cards = []
+    
     
   }
 }

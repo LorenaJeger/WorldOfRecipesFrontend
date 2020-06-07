@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 
 
-Vue.use(Croppa)  
+Vue.use(Croppa)
 Vue.config.productionTip = false
 
 new Vue({
